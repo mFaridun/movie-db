@@ -19,11 +19,11 @@ loader.appendChild(loaderDiv)
 
 async function fetchData () {
 
-  // if (!search.value) {
-  //   url = 'https://api.themoviedb.org/3/discover/movie?api_key=95ce2187ac8aaaf922eb7c3ac0746379'
-  // } else {
-  //   url = `https://api.themoviedb.org/3/search/movie?api_key=95ce2187ac8aaaf922eb7c3ac0746379&query=${search.value}`
-  // }
+  if (!search.value) {
+    url = 'https://api.themoviedb.org/3/discover/movie?api_key=95ce2187ac8aaaf922eb7c3ac0746379'
+  } else {
+    url = `https://api.themoviedb.org/3/search/movie?api_key=95ce2187ac8aaaf922eb7c3ac0746379&query=${search.value}`
+  }
 
   try {
     const response = await fetch(url);
@@ -86,10 +86,6 @@ async function fetchData () {
     console.log(error);
   }
 }
-
-// setTimeout(() => {
-//   fetchData();
-// }, 2000);
 
 fetchData();
 
