@@ -133,3 +133,39 @@ img {
   0% , 20% {  transform: translate(0, 0) }
   80% , 100% { transform: translate(-15px, -15px) }
 }
+
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+
+  }
+
+  h1 {
+    display: block;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .input-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 480px) {
+}
