@@ -53,17 +53,10 @@ async function fetchData () {
 
 
     movieBox.appendChild(images);
-    movieBox.appendChild(title);
-    movieBox.appendChild(rating);
+    lisBox.appendChild(title);
+    lisBox.appendChild(rating);
+    movieBox.appendChild(lisBox)
     fragment.appendChild(movieBox);
-
-
-
-    // movieBox.appendChild(images);
-    // lisBox.appendChild(title);
-    // lisBox.appendChild(rating);
-    // movieBox.appendChild(lisBox)
-    // fragment.appendChild(movieBox);
 
 
     movieList.appendChild(fragment);
