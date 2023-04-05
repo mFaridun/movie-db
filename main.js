@@ -17,10 +17,11 @@ const loaderDiv = document.createElement('div');
 loaderDiv.classList.add('loader-div')
 loader.appendChild(loaderDiv)
 
+let currentPage = 1;
 async function fetchData () {
 
   if (!search.value) {
-    url = 'https://api.themoviedb.org/3/discover/movie?api_key=95ce2187ac8aaaf922eb7c3ac0746379'
+    url = `https://api.themoviedb.org/3/discover/movie?api_key=95ce2187ac8aaaf922eb7c3ac0746379&page=${currentPage}`
   } else {
     url = `https://api.themoviedb.org/3/search/movie?api_key=95ce2187ac8aaaf922eb7c3ac0746379&query=${search.value}`
   }
@@ -74,6 +75,26 @@ async function fetchData () {
     }
 
   })
+
+  const paginationWrapper = document.querySelector('.pagination_wrapper');
+  paginationWrapper.innerHTML = '';
+
+  if (data.total_pages > 1) {
+    for (let i = 1; i <= 10; i++) {
+      const button = document.createElement('button');
+      button.textContent = i;
+
+      if (currentPage === i ) {
+        button.classList.add('active')
+      }
+
+      button.addEventListener('click', () => {
+        currentPage = i;
+        fetchData();
+      })
+      paginationWrapper.appendChild(button);
+    }
+  }
 
   } catch (error) {
     console.log(error);
