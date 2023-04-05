@@ -49,12 +49,16 @@ async function fetchData () {
     const title = document.createElement('h2');
     title.textContent = movie.title;
 
+    const overviewInfo = document.createElement('p');
+    overviewInfo.textContent = movie.overview;
+
     const rating = document.createElement('span');
-    rating.textContent = movie.vote_average;
+    rating.textContent = `Rating: ${movie.vote_average}`;
 
 
     movieBox.appendChild(images);
     lisBox.appendChild(title);
+    lisBox.appendChild(overviewInfo);
     lisBox.appendChild(rating);
     movieBox.appendChild(lisBox)
     fragment.appendChild(movieBox);
@@ -92,6 +96,7 @@ async function fetchData () {
         currentPage = i;
         fetchData();
       })
+
       paginationWrapper.appendChild(button);
     }
   }
@@ -104,7 +109,6 @@ async function fetchData () {
 fetchData();
 
 const searchBtn = document.querySelector('.searchBtn');
-
 searchBtn.addEventListener('click', () => {
   fetchData();
 })

@@ -74,14 +74,21 @@ h1 {
 }
 
 .movie-box {
-  width: 250px;
-  height: 260px;
+  width: 350px;
+  /* height: 260px; */
   border: 1px solid #3745c2;
 }
 
 img {
   width: 100%;
+  padding: 10px;
 }
+
+p {
+  padding: 10px 0;
+}
+
+
 
 .lisBox {
   padding: 10px;
